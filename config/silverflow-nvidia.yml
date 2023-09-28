@@ -1,5 +1,5 @@
 name: silverflow-nvidia
-description: This is my personal OS image (based on silverblue-nvidia from uBlue OS)
+description: My personal OS image (based on silverblue-nvidia from uBlue OS)
 base-image: ghcr.io/ublue-os/silverblue-nvidia
 image-version: 38
 
