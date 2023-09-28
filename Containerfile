@@ -17,7 +17,7 @@ ARG IMAGE_MAJOR_VERSION="${IMAGE_MAJOR_VERSION:-38}"
 
 # The default recipe is set to the recipe's default filename
 # so that `podman build` should just work for most people.
-ARG RECIPE=recipe.yml 
+ARG RECIPE=silverflow-nvidia.yml 
 # The default image registry to write to policy.json and cosign.yaml
 ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 

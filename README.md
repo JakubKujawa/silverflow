@@ -1,6 +1,8 @@
-# SilverFlow (Fedora SilverBlue with Nvidia from [uBlue-OS](https://github.com/ublue-os/nvidia), WIP)
+# SilverFlow (WIP)
 
 [![build-ublue](https://github.com/JakubKujawa/silverflow/actions/workflows/build.yml/badge.svg)](https://github.com/JakubKujawa/silverflow/actions/workflows/build.yml)
+
+Fedora SilverBlue with Nvidia from [uBlue-OS](https://github.com/ublue-os/nvidia)
 
 ## Installation
 
@@ -12,7 +14,7 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
 
   ```
-  sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/jakubkujawa/silverflow:latest
+  sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/jakubkujawa/silverflow-nvidia:latest
   ```
 
 - Reboot to complete the rebase:
@@ -24,7 +26,7 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
 - Then rebase to the signed image, like so:
 
   ```
-  sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/jakubkujawa/silverflow:latest
+  sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/jakubkujawa/silverflow-nvidia:latest
   ```
 
 - Reboot again to complete the installation
@@ -36,7 +38,7 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
 This repository builds date tags as well, so if you want to rebase to a particular day's build:
 
 ```
-sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/jakubkujawa/silverflow:20230403
+sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/jakubkujawa/silverflow-nvidia:20230403
 ```
 
 
