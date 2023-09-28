@@ -35,6 +35,8 @@ modules:
       disabled:
         - flatpak-user-update.timer
 
+  - type: yafti
+
   - type: script
     scripts:
       - openrazer.sh

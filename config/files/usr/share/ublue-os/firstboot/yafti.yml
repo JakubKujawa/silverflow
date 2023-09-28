@@ -23,6 +23,8 @@ screens:
         - run: flatpak remove --system --noninteractive --all
         - run: flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
         - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+        - run: flatpak remote-add --if-not-exists --system flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+        - run: flatpak remote-add --if-not-exists --user flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
   check-system-flathub:
     source: yafti.screen.consent
     values:
@@ -115,17 +117,19 @@ screens:
             - OnlyOffice: org.onlyoffice.desktopeditors
             - Obsidian: md.obsidian.Obsidian
             - Slack: com.slack.Slack
-            - Standard Notes: org.standardnotes.standardnotes
-            - Thunderbird Email: org.mozilla.Thunderbird
-        Streaming:
-          description: Stream to the Internet.
+        Custom:
+          description: Most used applications.
           default: false
           packages:
-            - OBS Studio: com.obsproject.Studio
-            - VkCapture for OBS: com.obsproject.Studio.OBSVkCapture
-            - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
-            - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
-            - Boatswain for Streamdeck: com.feaneron.Boatswain
+            - BlackBox (Terminal): com.raggesilver.BlackBox
+            - ZapZap: com.rtosta.zapzap
+            - Caprine: com.sindresorhus.Caprine
+            - Spotify: com.spotify.Client
+            - VSCode Insider: com.visualstudio.code.insiders
+            - FreeFileSync: org.freefilesync.FreeFileSync
+            - Telegram: org.telegram.desktop
+            - Upscayl: org.upscayl.Upscayl
+            - ArmCord (Custom Discord Client): xyz.armcord.ArmCord
 
   final-screen:
     source: yafti.screen.title
