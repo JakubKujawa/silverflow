@@ -1,4 +1,4 @@
-# SilverFlow (WIP)
+# Fedora SilverFlow (WIP)
 
 [![build-ublue](https://github.com/JakubKujawa/silverflow/actions/workflows/build.yml/badge.svg)](https://github.com/JakubKujawa/silverflow/actions/workflows/build.yml)
 
@@ -40,6 +40,10 @@ This repository builds date tags as well, so if you want to rebase to a particul
 ```
 sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/jakubkujawa/silverflow-nvidia:20230403
 ```
+
+## ISO
+
+For now, the iso is not available for download (but will be later this year)
 
 
 ## uBlue Documentation
