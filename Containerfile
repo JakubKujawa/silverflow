@@ -8,11 +8,12 @@
 # in the cloud. The ARGs have default values, but changing those
 # does nothing if the image is built in the cloud.
 
-# !! Warning: changing these might not do anything for you. Read comment above.
-ARG IMAGE_MAJOR_VERSION=38
+ARG IMAGE_MAJOR_VERSION="${IMAGE_MAJOR_VERSION:-38}"
 ARG BASE_IMAGE_URL=ghcr.io/ublue-os/silverblue-main
 
 FROM ${BASE_IMAGE_URL}:${IMAGE_MAJOR_VERSION}
+
+ARG IMAGE_MAJOR_VERSION="${IMAGE_MAJOR_VERSION:-38}"
 
 # The default recipe is set to the recipe's default filename
 # so that `podman build` should just work for most people.
