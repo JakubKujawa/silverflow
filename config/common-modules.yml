@@ -1,0 +1,39 @@
+
+  - type: files
+    files:
+      - usr: /usr
+
+  - type: rpm-ostree
+    repos:
+      - https://download.opensuse.org/repositories/hardware:/razer/Fedora_%OS_VERSION%/hardware:razer.repo
+    install:
+      - polychromatic
+      - openrazer-meta
+    remove:
+      - firefox
+      - firefox-langpacks
+      - gnome-software
+      - gnome-software-rpm-ostree
+      - gnome-tour
+
+  - type: bling
+    install:
+      - fonts
+      - dconf-update-service
+
+  - type: systemd
+    system:
+      disabled:
+        - flatpak-system-update.timer
+        - rpm-ostreed-automatic.timer
+    user:
+      disabled:
+        - flatpak-user-update.timer
+
+  - type: yafti
+
+  - type: script
+    scripts:
+      - openrazer.sh
+      - cleanup.sh
+      - signing.sh
