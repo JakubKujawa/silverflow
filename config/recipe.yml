@@ -20,7 +20,7 @@ modules:
     repos:
       - https://download.opensuse.org/repositories/hardware:/razer/Fedora_%OS_VERSION%/hardware:razer.repo
     install:
-      - openrazer-meta
+      - polychromatic
     remove:
       - firefox
       - firefox-langpacks
@@ -44,4 +44,5 @@ modules:
 
   - type: script
     scripts:
+      - openrazer.sh
       - signing.sh
