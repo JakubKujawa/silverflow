@@ -16,3 +16,15 @@ jetbrains-toolbox:
   @echo "Launching JetBrains Toolbox"
   ./jetbrains-toolbox-"${BUILD_VERSION}"/jetbrains-toolbox
 
+# Run the yafti setup tool
+yafti:
+  yafti /usr/share/ublue-os/firstboot/yafti.yml -f
+  
+# Install mamba | https://github.com/conda-forge/miniforge
+mamba:
+  #!/usr/bin/env bash
+  pushd "$(mktemp -d)"
+  @echo "Get latest Miniforge3 version"
+  curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+  HOMEDIR=$( getent passwd "$USER" | cut -d: -f6 )
+  bash Miniforge3-$(uname)-$(uname -m).sh -b -p "${HOMEDIR}/mambaforge/"
