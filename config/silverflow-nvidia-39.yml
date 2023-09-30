@@ -4,4 +4,4 @@ base-image: ghcr.io/ublue-os/silverblue-nvidia
 image-version: 39
 
 modules:
-  - from-file: common-modules.yml
+  - from-file: common-modules-39.yml
