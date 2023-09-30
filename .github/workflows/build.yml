@@ -33,7 +33,8 @@ jobs:
       matrix:
         recipe:
           - silverflow-nvidia.yml
-
+          - silverflow-nvidia-39.yml
+          
     steps:
       - name: Maximize build space
         uses: AdityaGarg8/remove-unwanted-software@v1
