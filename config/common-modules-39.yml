@@ -12,7 +12,8 @@ modules:
     install:
       # - polychromatic
       # - openrazer-meta
-      - bibata-cursor-themes
+      # No builds for F39
+      # - bibata-cursor-themes
       - adw-gtk3-theme
     remove:
       - firefox
@@ -20,6 +21,8 @@ modules:
       - gnome-software
       - gnome-software-rpm-ostree
       - gnome-tour
+      - gnome-terminal
+      - gnome-terminal-nautilus
 
   - type: bling
     install:
