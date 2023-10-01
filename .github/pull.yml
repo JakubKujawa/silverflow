@@ -1,0 +1,10 @@
+version: "1"
+rules:
+  - base: template
+    upstram: ublue-os:template
+    mergeMethod: hardreset
+  - base: live
+    upstream: template
+    mergeMethod: rebase
+label: ":arrow_heading_down: pull"
+conflictLabel: "merge-conflict"
