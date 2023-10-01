@@ -25,7 +25,7 @@ modules:
 
   - type: bling
     install:
-      - fonts
+      - laptop
       - dconf-update-service
 
   - type: systemd
