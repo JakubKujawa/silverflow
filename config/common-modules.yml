@@ -28,7 +28,6 @@ modules:
 
   - type: bling
     install:
-      - laptop
       - dconf-update-service
 
   - type: systemd
