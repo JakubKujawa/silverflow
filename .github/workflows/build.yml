@@ -56,6 +56,8 @@ jobs:
           echo "IMAGE_DESCRIPTION=$(yq '.description' ./config/${{ matrix.recipe }})" >> $GITHUB_ENV
           echo "IMAGE_MAJOR_VERSION=$(yq '.image-version' ./config/${{ matrix.recipe }})" >> $GITHUB_ENV
           echo "BASE_IMAGE_URL=$(yq '.base-image' ./config/${{ matrix.recipe }})" >> $GITHUB_ENV
+          echo "IS_LATEST_VERSION=$(yq '.is_latest_version' ./config/${{ matrix.recipe }})" >> $GITHUB_ENV
+          echo "IS_STABLE_VERSION=$(yq '.is_stable_version' ./config/${{ matrix.recipe }})" >> $GITHUB_ENV
 
       - name: Get current version
         id: labels
@@ -83,8 +85,11 @@ jobs:
           BUILD_TAGS=("${MAJOR_VERSION}" "${MAJOR_VERSION:+$MAJOR_VERSION-}${TIMESTAMP}")
           # --
 
-          BUILD_TAGS+=("${TIMESTAMP}")
-          BUILD_TAGS+=("latest")
+          if [[ "${{ env.IS_LATEST_VERSION }}" == "true" ]] && \
+             [[ "${{ env.IS_STABLE_VERSION }}" == "true" ]]; then
+              BUILD_TAGS+=("${TIMESTAMP}")
+              BUILD_TAGS+=("latest")
+          fi
 
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
               echo "Generated the following commit tags: "
