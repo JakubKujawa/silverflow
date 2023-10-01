@@ -9,11 +9,14 @@ modules:
       - https://download.opensuse.org/repositories/hardware:/razer/Fedora_%OS_VERSION%/hardware:razer.repo
       # COPR for bibata-cursor-themes
       - https://copr.fedorainfracloud.org/coprs/peterwu/rendezvous/repo/fedora-%OS_VERSION%/peterwu-rendezvous.repo
+      # VSCode repository from bluefin
+      - https://raw.githubusercontent.com/ublue-os/bluefin/main/dx/etc/yum.repos.d/vscode.repo
     install:
       - polychromatic
       - openrazer-meta
       - bibata-cursor-themes
       - adw-gtk3-theme
+      - code
     remove:
       - firefox
       - firefox-langpacks

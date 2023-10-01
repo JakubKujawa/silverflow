@@ -1,3 +1,4 @@
+
 # Install JetBrains Toolbox | https://www.jetbrains.com/toolbox-app/
 jetbrains-toolbox:
   #!/usr/bin/env bash
