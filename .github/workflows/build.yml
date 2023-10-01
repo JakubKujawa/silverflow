@@ -32,7 +32,7 @@ jobs:
 
       matrix:
         recipe:
-          - silverflow-nvidia.yml
+          - silverflow-nvidia-38.yml
           - silverflow-nvidia-39.yml
           
     steps:
