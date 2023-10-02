@@ -19,6 +19,7 @@ modules:
       - bibata-cursor-themes
 
   - from-file: config_modules/bling.yml
+  - from-file: config_modules/fonts.yml
 
   - type: yafti
 
