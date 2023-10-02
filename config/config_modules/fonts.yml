@@ -4,3 +4,6 @@ fonts:
     - FiraCode
     - JetBrainsMono
     - Hack
+  google-fonts:
+    - Roboto
+    - Open Sans
