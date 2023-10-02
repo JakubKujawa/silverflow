@@ -1,12 +1,5 @@
-# This is the Containerfile for your custom image.
-
-# Instead of adding RUN statements here, you should consider creating a script
-# in `config/scripts/`. Read more in `modules/script/README.md`
-
-# This Containerfile takes in the recipe, version, and base image as arguments,
-# all of which are provided by build.yml when doing builds
-# in the cloud. The ARGs have default values, but changing those
-# does nothing if the image is built in the cloud.
+# ! The ARGs have default values, but changing those !
+# ! does nothing if the image is built in the cloud. !
 
 ARG IMAGE_MAJOR_VERSION="${IMAGE_MAJOR_VERSION:-38}"
 ARG BASE_IMAGE_URL=ghcr.io/ublue-os/silverblue-main
@@ -15,17 +8,14 @@ FROM ${BASE_IMAGE_URL}:${IMAGE_MAJOR_VERSION}
 
 ARG IMAGE_MAJOR_VERSION="${IMAGE_MAJOR_VERSION:-38}"
 
-# The default recipe is set to the recipe's default filename
-# so that `podman build` should just work for most people.
-ARG RECIPE=silverflow-nvidia.yml 
+ARG RECIPE=silverflow-nvidia.yml
+
 # The default image registry to write to policy.json and cosign.yaml
 ARG IMAGE_REGISTRY=ghcr.io/ublue-os
-
 
 COPY cosign.pub /usr/share/ublue-os/cosign.pub
 
 # Copy the bling from ublue-os/bling into tmp, to be installed later by the bling module
-# Feel free to remove these lines if you want to speed up image builds and don't want any bling
 COPY --from=ghcr.io/ublue-os/bling:latest /rpms /tmp/bling/rpms
 COPY --from=ghcr.io/ublue-os/bling:latest /files /tmp/bling/files
 
@@ -36,6 +26,7 @@ COPY config /tmp/config/
 # Copy modules
 # The default modules are inside ublue-os/bling
 COPY --from=ghcr.io/ublue-os/bling:latest /modules /tmp/modules/
+
 # Custom modules overwrite defaults
 COPY modules /tmp/modules/
 
@@ -44,5 +35,5 @@ COPY modules /tmp/modules/
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 
 # Run the build script, then clean up temp files and finalize container build.
-RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
+RUN chmod +x /tmp/build.sh && /tmp/build.sh &&
     rm -rf /tmp/* /var/* && ostree container commit
