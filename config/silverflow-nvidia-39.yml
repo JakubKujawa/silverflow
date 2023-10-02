@@ -6,4 +6,11 @@ is_latest_version: true
 is_stable_version: false
 
 modules:
-  - from-file: common-modules-39.yml
+  - from-file: config_modules/files.yml
+  - from-file: config_modules/rpm-ostree.yml
+  - from-file: config_modules/bling.yml
+
+  - type: yafti
+
+  - from-file: config_modules/systemd.yml
+  - from-file: config_modules/scripts.yml
