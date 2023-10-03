@@ -1,5 +1,4 @@
 type: systemd
 system:
-  disabled:
-    - flatpak-system-update.timer
-    - rpm-ostreed-automatic.timer
+  enabled:
+    - ublue-update.service
