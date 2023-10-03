@@ -3,6 +3,10 @@
 # Tell build process to exit if there are any errors.
 set -oue pipefail
 
+IMAGE_VENDOR=silverflow
+IMAGE_TAG=latest
+IMAGE_INFO=/usr/share/ublue-os/image-info.json
+
 echo "Setting up container signing in policy.json and cosign.yaml for $IMAGE_NAME"
 echo "Registry to write: $IMAGE_REGISTRY"
 
@@ -24,7 +28,19 @@ yq -i -o=j '.transports.docker |=
 + .' "$FILE"
 
 IMAGE_REF="ostree-image-signed:docker://$IMAGE_REGISTRY/$IMAGE_NAME"
-printf '{\n"image-ref": "'"$IMAGE_REF"'",\n"image-tag": "latest"\n}' >/usr/share/ublue-os/image-info.json
 
+touch $IMAGE_INFO
+cat >$IMAGE_INFO <<EOF
+{
+    "image-name": "$IMAGE_NAME",
+    "image-flavor": "$BASE_IMAGE",
+    "image-vendor": "$IMAGE_VENDOR",
+    "image-ref": "$IMAGE_REF",
+    "image-tag": "$IMAGE_TAG",
+    "fedora-version": "$OS_VERSION"
+}
+EOF
+
+sed -i '/^PRETTY_NAME/s/Silverblue/SilverFlow/' /usr/lib/os-release
 cp /usr/etc/containers/registries.d/ublue-os.yaml /usr/etc/containers/registries.d/"$IMAGE_NAME".yaml
 sed -i "s ghcr.io/ublue-os $IMAGE_REGISTRY g" /usr/etc/containers/registries.d/"$IMAGE_NAME".yaml
