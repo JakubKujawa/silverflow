@@ -7,7 +7,6 @@ repos:
 install:
   - adw-gtk3-theme
   - code
-  - podman-docker
 remove:
   - firefox
   - firefox-langpacks
