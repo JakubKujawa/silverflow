@@ -29,4 +29,5 @@ modules:
 
   - type: script
     scripts:
+      - container-tools.sh
       - openrazer.sh
