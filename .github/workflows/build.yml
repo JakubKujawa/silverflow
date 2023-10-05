@@ -1,4 +1,4 @@
-# This workflow builds every branch of the repository daily at 10:00 UTC, two hours after ublue-os/nvidia builds.
+# This workflow builds 'live' and 'dev' branch of the repository daily at 10:00 UTC, two hours after ublue-os/nvidia builds.
 
 name: build-ublue
 on: 
@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - live
+      - dev
     paths-ignore: 
       # don't rebuild if only documentation has changed
       - "**.md"

@@ -1,4 +1,5 @@
 type: script
 scripts:
   - cleanup.sh
+  - container-tools.sh
   - signing.sh
