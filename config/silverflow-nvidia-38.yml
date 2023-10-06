@@ -14,6 +14,7 @@ modules:
       # Repo for Razer Hardware
       - https://download.opensuse.org/repositories/hardware:/razer/Fedora_%OS_VERSION%/hardware:razer.repo
     install:
+      - podman-docker
       - polychromatic
       - openrazer-meta
       - bibata-cursor-themes
@@ -28,4 +29,5 @@ modules:
 
   - type: script
     scripts:
+      - container-tools.sh
       - openrazer.sh
