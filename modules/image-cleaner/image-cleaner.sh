@@ -6,6 +6,7 @@ get_yaml_array ENTRIES '.entries[]' "$1"
 if [[ ${#ENTRIES[@]} -gt 0 ]]; then
     echo "Removing desktop entries..."
     for entry in "${ENTRIES[@]}"; do
+        entry="$(echo "$entry" | tr -d '\n')"
         desktop_file="/usr/share/applications/${entry}.desktop"
 
         if [[ -f "$desktop_file" ]]; then
@@ -22,6 +23,7 @@ get_yaml_array REPOS '.repos[]' "$1"
 if [[ ${#REPOS[@]} -gt 0 ]]; then
     echo "Removing repositories..."
     for repo in "${REPOS[@]}"; do
+        repo="$(echo "$repo" | tr -d '\n')"
         repo_file="/etc/yum.repos.d/${repo}.repo"
 
         if [[ -f "$repo_file" ]]; then
