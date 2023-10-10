@@ -34,8 +34,10 @@ modules:
       enabled:
         - podman.socket
 
+  - from-file: common_modules/image-cleaner.yml
   - from-file: common_modules/scripts.yml
 
   - type: script
     scripts:
       - container-tools.sh
+      - udev-rules.sh

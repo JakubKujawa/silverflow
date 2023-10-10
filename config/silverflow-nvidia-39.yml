@@ -14,4 +14,5 @@ modules:
   - type: yafti
 
   - from-file: common_modules/systemd.yml
+  - from-file: common_modules/image-cleaner.yml
   - from-file: common_modules/scripts.yml
