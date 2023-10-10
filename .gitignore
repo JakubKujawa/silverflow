@@ -3,3 +3,4 @@ cosign.key
 
 # Ignore backup files
 __*.yml
+__*.sh
