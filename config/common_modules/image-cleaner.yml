@@ -2,6 +2,8 @@ type: image-cleaner
 entries:
   - nvtop
   - htop
+  - nvidia-settings
+  - yelp
 repos:
   - _copr:copr.fedorainfracloud.org:phracek:PyCharm
   - google-chrome
