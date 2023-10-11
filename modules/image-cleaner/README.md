@@ -6,7 +6,7 @@ To make the most of the `image-cleaner` module, you can easily specify the deskt
 
 ## Example configuration
 ```yaml
-type: desktop-cleaner
+type: image-cleaner
 entries:
     - nvtop
     - htop
