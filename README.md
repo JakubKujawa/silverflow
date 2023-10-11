@@ -1,55 +1,34 @@
-# Fedora SilverFlow (WIP)
+# SilverFlow
 
 [![build-ublue](https://github.com/C0dePlayer/silverflow/actions/workflows/build.yml/badge.svg)](https://github.com/C0dePlayer/silverflow/actions/workflows/build.yml)
 
-Fedora SilverBlue with Nvidia from [uBlue-OS](https://github.com/ublue-os/nvidia)
+SilverFlow is based on [ublue-os/startingpoint](https://github.com/ublue-os/startingpoint), which makes it easy to create your own custom image-based Fedora experience. For more information, see the [uBlue homepage](https://universal-blue.org/) and the [main uBlue repo](https://github.com/ublue-os/main/).
 
 ## Installation
 
-> **Warning**
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) and should not be used in production, try it in a VM for a while!
+> [!NOTE]
+> I recommend either using one of the main uBlue images or creating your own
 
-To rebase an existing Silverblue/Kinoite installation to the latest build:
+**Recommended:** Use the latest ISO from [the Releases page](https://github.com/C0dePlayer/silverflow/releases)
 
-- First rebase to the unsigned image, to get the proper signing keys and policies installed:
+<details>
+  <summary><b>Rebase an existing Silverblue/Kinoite installation</b></summary>
 
-  ```
-  sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/c0deplayer/silverflow-nvidia:latest
-  ```
-
-- Reboot to complete the rebase:
-
-  ```
-  systemctl reboot
-  ```
-
-- Then rebase to the signed image, like so:
-
-  ```
-  sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/c0deplayer/silverflow-nvidia:latest
-  ```
-
-- Reboot again to complete the installation
-
-  ```
-  systemctl reboot
-  ```
-
-This repository builds date tags as well, so if you want to rebase to a particular day's build:
-
-```
-sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/c0deplayer/silverflow-nvidia:20230403
-```
-
-## ISO
-
-For now, the iso is not available for download (but will be later this year)
-
-
-## uBlue Documentation
-
-
-- [Main website and documentation](https://universal-blue.org)
-- [Documentation for these images](https://universal-blue.org/images/nvidia)
-- [Installation](https://universal-blue.org/installation/) - follow this for clean installation
-- [Rebase instructions](https://universal-blue.org/images/) - follow this if you want to switch to another image.
+  1. Rebase to the unsigned image to install the proper signing keys and policies:
+     
+     ```
+     sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/c0deplayer/silverflow-nvidia:latest
+     ```
+      - This repository builds date tags as well, so if you want to rebase to a particular day's build:
+        
+        ```
+        sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/c0deplayer/silverflow-nvidia:20230403
+        ```
+  2. Reboot to complete the rebase:
+     
+      ```
+      systemctl reboot
+      ```
+      
+  3. After first boot, the first time that [ublue-update](https://github.com/ublue-os/ublue-update) runs it will automatically rebase you onto the signed image.
+</details>
