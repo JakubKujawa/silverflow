@@ -1,5 +1,6 @@
 ublue_variants:
-  - label: ublue-os/startingpoint
+  - label: C0dePlayer/silverflow
     ks: /kickstart/ublue-os.ks
     flavors:
-      - label: startingpoint
+      - label: silverflow-nvidia
+        info: GNOME with Nvidia drivers
