@@ -11,6 +11,6 @@ entries:
     - nvtop
     - htop
 repos:
-    - _copr:copr.fedorainfracloud.org:phracek:PyCharm.repo
-    - google-chrome.repo
+    - _copr:copr.fedorainfracloud.org:phracek:PyCharm
+    - google-chrome
 ```
