@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -oue pipefail
+
 FILES_ROOT="/tmp/config/files"
 
 wget -O $FILES_ROOT/99-razer.rules 'https://raw.githubusercontent.com/ublue-os/openrazer/master/install_files/udev/99-razer.rules'
