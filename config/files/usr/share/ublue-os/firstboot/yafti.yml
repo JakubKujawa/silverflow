@@ -5,10 +5,10 @@ screens:
   first-screen:
     source: yafti.screen.title
     values:
-      title: "Welcome to uBlue (Alpha)"
+      title: "Welcome to SilverFlow"
       icon: "/path/to/icon"
       description: |
-        This guided installer will help you get started with your new system.
+        Default system apps are installing in the background, but it is safe to use your computer in the meantime.
   can-we-modify-your-flatpaks:
     source: yafti.screen.consent
     values:
@@ -140,7 +140,7 @@ screens:
         - "Install More Applications":
             run: /usr/bin/gnome-software
         - "Website":
-            run: /usr/bin/xdg-open https://ublue.it
+            run: /usr/bin/xdg-open https://universal-blue.org/
         - "Join the Discord Community":
             run: /usr/bin/xdg-open https://discord.gg/XjG48C7VHx
       description: |
