@@ -7,6 +7,7 @@ repos:
   # Repo for Razer Hardware
   - https://download.opensuse.org/repositories/hardware:/razer/Fedora_%OS_VERSION%/hardware:razer.repo
 install:
+  - podman-docker
   - adw-gtk3-theme
   - code
   - polychromatic
