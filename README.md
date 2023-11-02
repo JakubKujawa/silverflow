@@ -17,12 +17,12 @@ SilverFlow is based on [ublue-os/startingpoint](https://github.com/ublue-os/star
   1. Rebase to the unsigned image to install the proper signing keys and policies:
      
      ```
-     sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/c0deplayer/silverflow-nvidia:latest
+     rpm-ostree rebase ostree-unverified-registry:ghcr.io/c0deplayer/silverflow-nvidia:latest
      ```
       - This repository builds date tags as well, so if you want to rebase to a particular day's build:
         
         ```
-        sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/c0deplayer/silverflow-nvidia:20231005
+        rpm-ostree rebase ostree-unverified-registry:ghcr.io/c0deplayer/silverflow-nvidia:20231005
         ```
   2. Reboot to complete the rebase:
      
