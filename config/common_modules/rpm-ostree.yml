@@ -4,9 +4,13 @@ repos:
   - https://copr.fedorainfracloud.org/coprs/peterwu/rendezvous/repo/fedora-%OS_VERSION%/peterwu-rendezvous.repo
   # VSCode repository from bluefin
   - https://raw.githubusercontent.com/ublue-os/bluefin/main/dx/etc/yum.repos.d/vscode.repo
+  # Repo for Razer Hardware
+  - https://download.opensuse.org/repositories/hardware:/razer/Fedora_%OS_VERSION%/hardware:razer.repo
 install:
   - adw-gtk3-theme
   - code
+  - polychromatic
+  - openrazer-meta
 remove:
   - firefox
   - firefox-langpacks

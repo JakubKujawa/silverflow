@@ -10,13 +10,8 @@ modules:
   - from-file: common_modules/rpm-ostree.yml
 
   - type: rpm-ostree
-    repos:
-      # Repo for Razer Hardware
-      - https://download.opensuse.org/repositories/hardware:/razer/Fedora_%OS_VERSION%/hardware:razer.repo
     install:
       - podman-docker
-      - polychromatic
-      - openrazer-meta
       - bibata-cursor-themes
 
   - from-file: common_modules/bling.yml
