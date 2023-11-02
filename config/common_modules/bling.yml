@@ -2,3 +2,4 @@ type: bling
 install:
   - ublue-update
   - dconf-update-service
+  - laptop
