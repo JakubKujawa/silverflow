@@ -1,4 +1,6 @@
 type: bling
 install:
+  - justfiles
   - ublue-update
   - dconf-update-service
+  - laptop

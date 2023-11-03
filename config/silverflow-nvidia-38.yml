@@ -8,31 +8,12 @@ is_stable_version: true
 modules:
   - from-file: common_modules/files.yml
   - from-file: common_modules/rpm-ostree.yml
-
-  - type: rpm-ostree
-    install:
-      - podman-docker
-      - bibata-cursor-themes
-
   - from-file: common_modules/bling.yml
   - from-file: common_modules/fonts.yml
 
   - type: yafti
 
   - from-file: common_modules/systemd.yml
-
-  - type: systemd
-    system:
-      enabled:
-        - podman.socket
-    user:
-      enabled:
-        - podman.socket
-
   - from-file: common_modules/image-cleaner.yml
   - from-file: common_modules/scripts.yml
 
-  - type: script
-    scripts:
-      - container-tools.sh
-      - udev-rules.sh
