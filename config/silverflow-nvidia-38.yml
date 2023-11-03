@@ -8,11 +8,6 @@ is_stable_version: true
 modules:
   - from-file: common_modules/files.yml
   - from-file: common_modules/rpm-ostree.yml
-
-  - type: rpm-ostree
-    install:
-      - bibata-cursor-themes
-
   - from-file: common_modules/bling.yml
   - from-file: common_modules/fonts.yml
 

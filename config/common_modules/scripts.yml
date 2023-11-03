@@ -3,3 +3,4 @@ scripts:
   - signing.sh
   - container-tools.sh
   - udev-rules.sh
+  - systemwide_themes.sh
