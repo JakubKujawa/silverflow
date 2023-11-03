@@ -19,19 +19,6 @@ modules:
   - type: yafti
 
   - from-file: common_modules/systemd.yml
-
-  - type: systemd
-    system:
-      enabled:
-        - podman.socket
-    user:
-      enabled:
-        - podman.socket
-
   - from-file: common_modules/image-cleaner.yml
   - from-file: common_modules/scripts.yml
 
-  - type: script
-    scripts:
-      - container-tools.sh
-      - udev-rules.sh
