@@ -1,9 +1,9 @@
-# This workflow builds 'live' and 'dev' branch of the repository daily at 10:00 UTC, two hours after ublue-os/nvidia builds.
+# This workflow builds 'live' and 'dev' branch of the repository daily at 16:00 UTC (30 min delay after 'ublue-os/nvidia' builds)
 
 name: build-ublue
 on: 
   schedule:
-    - cron: "0 10 * * *"
+    - cron: "00 16 * * *"
   push:
     branches:
       - live
