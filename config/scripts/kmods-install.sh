@@ -7,4 +7,4 @@ rpm-ostree install \
     kernel-devel-matched \
     /tmp/rpms/kmods/*openrazer*.rpm \
     /tmp/rpms/kmods/*v4l2loopback*.rpm \
-    /tmp/rpms/kmods/*ryzen_smu*.rpm
+    /tmp/rpms/kmods/*ryzen-smu*.rpm
