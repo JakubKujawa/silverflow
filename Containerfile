@@ -7,7 +7,6 @@ ARG BASE_IMAGE_URL=ghcr.io/ublue-os/silverblue-main
 FROM ${BASE_IMAGE_URL}:${IMAGE_MAJOR_VERSION}
 
 ARG IMAGE_MAJOR_VERSION="${IMAGE_MAJOR_VERSION:-38}"
-ARG NVIDIA_MAJOR_VERSION="${NVIDIA_MAJOR_VERSION:-535}"
 
 ARG RECIPE=silverflow-nvidia.yml
 
@@ -36,7 +35,7 @@ COPY modules /tmp/modules/
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 
 # ! Starting with F39, the main image does not contain kmods !
-COPY --from=ghcr.io/ublue-os/akmods-nvidia:main-${IMAGE_MAJOR_VERSION}-${NVIDIA_MAJOR_VERSION} /rpms /tmp/rpms
+COPY --from=ghcr.io/ublue-os/akmods:main-${IMAGE_MAJOR_VERSION} /rpms /tmp/rpms
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/build.sh && /tmp/build.sh && rm -rf /tmp/* /var/* && ostree container commit
