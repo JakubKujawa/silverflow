@@ -3,7 +3,7 @@ description: My personal OS image (based on silverblue-nvidia from uBlue OS)
 base-image: ghcr.io/ublue-os/silverblue-nvidia
 image-version: 39
 is_latest_version: true
-is_stable_version: false
+is_stable_version: true
 
 modules:
   - from-file: common_modules/files.yml
