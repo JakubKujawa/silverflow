@@ -8,6 +8,7 @@ is_stable_version: false
 modules:
   - from-file: common_modules/files.yml
   - from-file: common_modules/rpm-ostree.yml
+  - from-file: common_modules/kmods-installer.yml
   - from-file: common_modules/bling.yml
   - from-file: common_modules/fonts.yml
 
@@ -16,8 +17,3 @@ modules:
   - from-file: common_modules/systemd.yml
   - from-file: common_modules/image-cleaner.yml
   - from-file: common_modules/scripts.yml
-
-  - type: script
-    scripts:
-      - kmods-install.sh
-
