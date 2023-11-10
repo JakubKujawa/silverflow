@@ -1,7 +1,7 @@
 # ! The ARGs have default values, but changing those !
 # ! does nothing if the image is built in the cloud. !
-
 ARG IMAGE_MAJOR_VERSION="${IMAGE_MAJOR_VERSION:-39}"
+ARG IMAGE_MAJOR_VERSION=38
 ARG BASE_IMAGE_URL=ghcr.io/ublue-os/silverblue-main
 
 FROM ${BASE_IMAGE_URL}:${IMAGE_MAJOR_VERSION}
