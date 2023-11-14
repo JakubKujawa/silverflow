@@ -125,7 +125,7 @@ screens:
             - ZapZap: com.rtosta.zapzap
             - Caprine: com.sindresorhus.Caprine
             - Spotify: com.spotify.Client
-            - VSCode Insider: com.visualstudio.code.insiders
+            - VSCode: com.visualstudio.code
             - FreeFileSync: org.freefilesync.FreeFileSync
             - Telegram: org.telegram.desktop
             - Upscayl: org.upscayl.Upscayl
