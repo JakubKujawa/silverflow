@@ -17,10 +17,12 @@ jetbrains-toolbox:
     echo "Launching JetBrains Toolbox"
     ./jetbrains-toolbox-"${BUILD_VERSION}"/jetbrains-toolbox
 
+
 # Run the yafti setup tool
 yafti:
     yafti /usr/share/ublue-os/firstboot/yafti.yml -f
   
+
 # Install mamba | https://github.com/conda-forge/miniforge
 mamba:
     #!/usr/bin/env bash
