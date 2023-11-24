@@ -1,33 +1,17 @@
 !include 100-bling.just
 # Include some of your custom scripts here!
 
-# Install JetBrains Toolbox | https://www.jetbrains.com/toolbox-app/
-jetbrains-toolbox:
-    #!/usr/bin/env bash
-    pushd "$(mktemp -d)"
-    echo "Get latest JetBrains Toolbox version"
-    curl -sSfL -o releases.json "https://data.services.jetbrains.com/products/releases?code=TBA&latest=true&type=release"
-    BUILD_VERSION=$(jq -r '.TBA[0].build' ./releases.json)
-    DOWNLOAD_LINK=$(jq -r '.TBA[0].downloads.linux.link' ./releases.json)
-    CHECKSUM_LINK=$(jq -r '.TBA[0].downloads.linux.checksumLink' ./releases.json)
-    echo "Installing JetBrains Toolbox ${BUILD_VERSION}"
-    curl -sSfL -O "${DOWNLOAD_LINK}"
-    curl -sSfL "${CHECKSUM_LINK}" | sha256sum -c
-    tar zxf jetbrains-toolbox-"${BUILD_VERSION}".tar.gz
-    echo "Launching JetBrains Toolbox"
-    ./jetbrains-toolbox-"${BUILD_VERSION}"/jetbrains-toolbox
-
-
 # Run the yafti setup tool
 yafti:
     yafti /usr/share/ublue-os/firstboot/yafti.yml -f
-  
 
-# Install mamba | https://github.com/conda-forge/miniforge
-mamba:
+
+# Install pdm (modern Python package and dependency manager) | https://pdm-project.org/latest/
+install-pdm:
     #!/usr/bin/env bash
-    pushd "$(mktemp -d)"
-    echo "Get latest Miniforge3 version"
-    curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+    cd ~/Downloads || exit
+    curl -sSLO https://pdm-project.org/install-pdm.py
+    curl -sSL https://pdm-project.org/install-pdm.py.sha256 | sha256sum -c -
     HOMEDIR=$( getent passwd "$USER" | cut -d: -f6 )
-    bash Miniforge3-$(uname)-$(uname -m).sh -b -p "${HOMEDIR}/mambaforge/"
+    python3 install-pdm.py --path "${HOMEDIR}/pdm"
+    rm install-pdm.py
