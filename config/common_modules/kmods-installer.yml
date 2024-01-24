@@ -1,5 +1,0 @@
-type: kmods-installer
-install:
-  - openrazer
-  - v4l2loopback
-  - ryzen-smu

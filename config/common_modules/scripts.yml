@@ -1,6 +1,4 @@
 type: script
 scripts:
   - signing.sh
-  - container-tools.sh
-  - udev-rules.sh
   - systemwide-themes.sh
