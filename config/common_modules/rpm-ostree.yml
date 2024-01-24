@@ -4,14 +4,11 @@ repos:
   - https://raw.githubusercontent.com/ublue-os/bluefin/main/dx/etc/yum.repos.d/vscode.repo
   # Repo for Razer Hardware
   - https://download.opensuse.org/repositories/hardware:/razer/Fedora_%OS_VERSION%/hardware:razer.repo
-  # Brave repository
-  - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 install:
   - adw-gtk3-theme
   - code
   - polychromatic
   - openrazer-meta
-  - brave-browser
 remove:
   - gnome-software
   - gnome-software-rpm-ostree
