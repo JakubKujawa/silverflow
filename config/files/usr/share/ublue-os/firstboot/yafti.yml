@@ -127,9 +127,10 @@ screens:
             - Spotify: com.spotify.Client
             - VSCode: com.visualstudio.code
             - FreeFileSync: org.freefilesync.FreeFileSync
-            - Telegram: org.telegram.desktop
+            - Materialgram: io.github.kukuruzka165.materialgram
             - Upscayl: org.upscayl.Upscayl
             - ArmCord (Custom Discord Client): xyz.armcord.ArmCord
+            - WebCord (Custom Discord Client): io.github.spacingbat3.webcord
 
   final-screen:
     source: yafti.screen.title
@@ -137,8 +138,6 @@ screens:
       title: "All done!"
       icon: "/path/to/icon"
       links:
-        - "Install More Applications":
-            run: /usr/bin/gnome-software
         - "Website":
             run: /usr/bin/xdg-open https://universal-blue.org/
         - "Join the Discord Community":
