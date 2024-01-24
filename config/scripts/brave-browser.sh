@@ -14,7 +14,7 @@ baseurl=https://brave-browser-rpm-release.s3.brave.com/\$basearch
 EOF
 
 # Import signing key
-rpm --import https://brave-browser-rpm-beta.s3.brave.com/brave-core-nightly.asc
+rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 # Now let's install the packages.
 rpm-ostree install brave-browser
