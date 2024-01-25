@@ -38,7 +38,6 @@ rm /etc/yum.repos.d/brave-browser.repo -f
 mv /var/opt/brave.com /usr/lib/brave.com # move this over here
 
 # Create a symlinks
-rm /usr/bin/brave-browser
 rm /usr/bin/brave-browser-stable
 ln -s /opt/brave.com/brave/brave-browser /usr/bin/brave-browser
 ln -s /opt/brave.com/brave/brave-browser /usr/bin/brave-browser-stable
