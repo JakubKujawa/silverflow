@@ -41,3 +41,9 @@ mv /var/opt/brave.com /usr/lib/brave.com # move this over here
 rm /usr/bin/brave-browser-stable
 ln -s /opt/brave.com/brave/brave-browser /usr/bin/brave-browser
 ln -s /opt/brave.com/brave/brave-browser /usr/bin/brave-browser-stable
+
+# Register path symlink
+# We do this via tmpfiles.d so that it is created by the live system.
+cat >/usr/lib/tmpfiles.d/brave-browser.conf <<EOF
+L  /opt/brave.com  -  -  -  -  /usr/lib/brave.com
+EOF
