@@ -11,9 +11,6 @@ modules:
   - from-file: common_modules/akmods.yml
   - from-file: common_modules/bling.yml
   - from-file: common_modules/fonts.yml
-
-  - type: yafti
-
   - from-file: common_modules/systemd.yml
   - from-file: common_modules/image-cleaner.yml
   - from-file: common_modules/scripts.yml

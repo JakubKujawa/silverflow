@@ -1,11 +1,6 @@
 import '100-bling.just'
 # Include some of your custom scripts here!
 
-# Run the yafti setup tool
-yafti:
-    yafti /usr/share/ublue-os/firstboot/yafti.yml -f
-
-
 # Install pdm (modern Python package and dependency manager) | https://pdm-project.org/latest/
 install-pdm:
     #!/usr/bin/env bash
