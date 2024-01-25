@@ -4,4 +4,5 @@ install:
   - justfiles
   - ublue-update
   - dconf-update-service
+  - ublue-os-wallpapers
   - laptop
