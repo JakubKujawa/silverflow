@@ -1,4 +1,5 @@
 type: script
 scripts:
   - signing.sh
+  - brave-browser.sh
   - systemwide-themes.sh
