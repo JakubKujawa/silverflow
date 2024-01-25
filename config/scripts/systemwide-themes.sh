@@ -10,9 +10,11 @@ wget -O "${FILES_ROOT}/Bibata-Modern-Classic.tar.xz" https://github.com/ful1e5/B
 cd "${FILES_ROOT}" || exit
 
 for f in *.tar.xz; do
+    directory_name=$(basename "${f}" .tar.xz)
+
     echo "Unpacking ${f}"
     tar -xf "${f}"
-done
 
-cp -r Bibata-Modern-Classic "/usr/share/icons/"
-cp -r Bibata-Modern-Ice "/usr/share/icons/"
+    echo "Copying ${directory_name} to /usr/share/icons/"
+    cp -r "${directory_name}" "/usr/share/icons/"
+done
