@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ouex pipefail
+set -euox pipefail
 
 echo "Installing Brave Browser"
 
