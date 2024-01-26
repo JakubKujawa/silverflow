@@ -19,3 +19,7 @@ remove:
   - gnome-terminal
   - gnome-terminal-nautilus
   - gnome-classic-session
+  - gnome-shell-extension-apps-menu
+  - gnome-shell-extension-background-logo
+  - gnome-shell-extension-launch-new-instance
+  - gnome-shell-extension-window-list
