@@ -6,12 +6,12 @@ is_latest_version: true
 is_stable_version: true
 
 modules:
+  - from-file: common_modules/akmods.yml
   - from-file: common_modules/files.yml
   - from-file: common_modules/rpm-ostree.yml
   - from-file: common_modules/default-flatpaks.yml
-  - from-file: common_modules/akmods.yml
-  - from-file: common_modules/bling.yml
   - from-file: common_modules/fonts.yml
+  - from-file: common_modules/bling.yml
   - from-file: common_modules/systemd.yml
   - from-file: common_modules/image-cleaner.yml
   - from-file: common_modules/scripts.yml

@@ -1,6 +1,6 @@
 type: script
 scripts:
-  - signing.sh
   - system76-scheduler.sh
   - brave-browser.sh
   - systemwide-themes.sh
+  - signing.sh
