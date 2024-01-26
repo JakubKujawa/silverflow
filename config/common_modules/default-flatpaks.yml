@@ -19,6 +19,5 @@ system:
     - com.github.rafostar.Clapper
     - com.github.tchx84.Flatseal
     - com.mattjakeman.ExtensionManager
-    - com.raggesilver.BlackBox
     - io.missioncenter.MissionCenter
     - com.github.marhkb.Pods
