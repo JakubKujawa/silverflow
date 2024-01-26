@@ -24,3 +24,4 @@ remove:
   - gnome-shell-extension-background-logo
   - gnome-shell-extension-launch-new-instance
   - gnome-shell-extension-window-list
+  - gnome-system-monitor
