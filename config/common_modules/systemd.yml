@@ -2,6 +2,4 @@ type: systemd
 system:
   enabled:
     - ublue-update.service
-    - com.system76.Scheduler.service
-    - com.system76.PowerDaemon.service
-    - system76-power-wake.service
+
