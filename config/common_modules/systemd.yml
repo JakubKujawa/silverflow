@@ -2,4 +2,6 @@ type: systemd
 system:
   enabled:
     - ublue-update.service
-
+user:
+  enabled:
+    - podman.socket
