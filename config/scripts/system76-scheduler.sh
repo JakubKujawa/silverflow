@@ -10,7 +10,8 @@ wget "https://copr.fedorainfracloud.org/coprs/szydell/system76/repo/fedora-$(rpm
     -O /etc/yum.repos.d/_copr_szydell_system76_fedora.repo
 
 if rpm -qa | grep power-profiles-daemon ; then
-    rpm-ostree override remove power-profiles-daemon --install=system76-scheduler --install=system76-power --install=gnome-shell-extension-system76-scheduler
+    rpm-ostree override remove power-profiles-daemon --install=system76-scheduler --install=system76-power \
+    --install=gnome-shell-extension-system76-scheduler --install=system76-dkms --install=system76-acpi-dkms
 else
     rpm-ostree install system76-scheduler system76-power gnome-shell-extension-system76-scheduler
 fi
