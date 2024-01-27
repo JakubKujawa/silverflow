@@ -2,3 +2,4 @@ type: bling
 install:
   - 1password
   - dconf-update-service
+  - ublue-update

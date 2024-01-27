@@ -1,6 +1,5 @@
 type: script
 scripts:
-  - ublue-update.sh
   - system76-scheduler.sh
   - brave-browser.sh
   - systemwide-themes.sh

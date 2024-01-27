@@ -12,10 +12,6 @@ set_config_value() {
     sed -i 's/'"$1"'='"$CURRENT"'/'"$1"'='"$2"'/g' "$3"
 }
 
-# Fetch bling COPR
-REPO="https://copr.fedorainfracloud.org/coprs/ublue-os/bling/repo/fedora-${OS_VERSION}/ublue-os-bling-fedora-${OS_VERSION}.repo"
-wget "${REPO//[$'\t\r\n ']/}" -P "/etc/yum.repos.d/"
-
 # Check if ublue-os-update-services rpm is installed, these services conflict with ublue-update
 if rpm -q ublue-os-update-services >/dev/null; then
     rpm-ostree override remove ublue-os-update-services
@@ -33,6 +29,3 @@ systemctl disable rpm-ostreed-automatic.timer
 # topgrade is REQUIRED by ublue-update to install
 pip install --prefix=/usr topgrade
 rpm-ostree install ublue-update
-
-# Remove bling COPR
-rm /etc/yum.repos.d/ublue-os-bling-fedora-*.repo
