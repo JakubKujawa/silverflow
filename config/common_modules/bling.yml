@@ -1,7 +1,5 @@
 type: bling
 install:
   - 1password
-  - justfiles
   - ublue-update
   - dconf-update-service
-  - ublue-os-wallpapers
