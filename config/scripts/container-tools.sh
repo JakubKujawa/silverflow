@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euoe pipefail
+set -euo pipefail
 
 FILES_ROOT="/tmp/config/files"
 

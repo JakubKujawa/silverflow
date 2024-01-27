@@ -3,4 +3,5 @@ scripts:
   - system76-scheduler.sh
   - brave-browser.sh
   - systemwide-themes.sh
+  - nvidia-optimus-workaround.sh
   - signing.sh
