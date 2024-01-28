@@ -6,7 +6,10 @@ SilverFlow is based on [ublue-os/startingpoint](https://github.com/ublue-os/star
 
 ## Installation
 
-> **NOTE**
+> [!WARNING]
+> Currently, the system is undergoing constant changes, such as system hardening, package replacement or other experiments (not sure how long). There is a chance of abandoning the system again!
+
+> [!NOTE]
 > I recommend either using one of the main uBlue images or creating your own
 
 **Recommended:** Use the latest ISO from [the Releases page](https://github.com/C0dePlayer/silverflow/releases)
