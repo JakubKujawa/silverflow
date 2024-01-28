@@ -2,6 +2,7 @@ title: Welcome to uBlue
 properties:
   mode: "run-on-change"
 screens:
+
   first-screen:
     source: yafti.screen.title
     values:
@@ -9,6 +10,7 @@ screens:
       icon: "/path/to/icon"
       description: |
         Default system apps are installing in the background, but it is safe to use your computer in the meantime.
+        
   applications:
     source: yafti.screen.package
     values:
@@ -74,18 +76,25 @@ screens:
             - Caprine: com.sindresorhus.Caprine
             - Materialgram: io.github.kukuruzka165.materialgram
             - Upscayl: org.upscayl.Upscayl
-  configure-silveflow:
-    source: yafti.screen.package
+
+  can-we-harden-your-kargs:
+    source: yafti.screen.consent
     values:
-      title: Additional SilverFlow configs
-      show_terminal: true
-      package_manager: yafti.plugin.run
-      groups:         
-        Hide GRUB:
-          description: Hides GRUB text output on boot.
-          default: false
-          packages:
-          - Hide GRUB: pkexec ujust configure-grub hide
+      title: Kernel hardening
+      description: |
+        This step will enable additional kernel hardening. Warning: setting disable_early_pci_dma may lead to boot issues. If you encounter them, re-run this without the disable_early_pci_dma variable
+      actions:
+        - run: pkexec ujust set-kargs-hardening append
+
+  can-we-hide-grub:
+    source: yafti.screen.consent
+    values:
+      title: Hide GRUB
+      description: |
+        This step will hide GRUB from the boot process. If you want to access GRUB, hold down the ESC key during boot.
+      actions:
+        - run: pkexec ujust configure-grub hide
+
   final-screen:
     source: yafti.screen.title
     values:

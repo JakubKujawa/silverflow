@@ -11,6 +11,59 @@ install-pdm:
     python3 install-pdm.py --path "${HOMEDIR}/pdm"
     rm install-pdm.py
 
+# Add additional boot parameters for hardening (requires reboot)
+set-kargs-hardening ACTION="prompt":
+    #!/usr/bin/env bash
+    bold=$(tput bold)
+    normal=$(tput sgr0)
+    OPTION={{ ACTION }}
+    if [ "$OPTION" == "prompt" ]; then
+    echo "${bold}Additional boot parameters for hardening${normal}"
+    echo 'GRUB hiding option can be useful for making boot-times faster.'
+    echo 'Press ESC to exit.'
+    OPTION=$(ugum choose "Append" Delete)
+    if [ "${OPTION,,}" == "append" ]; then
+      rpm-ostree kargs \
+        --append-if-missing="init_on_alloc=1" \
+        --append-if-missing="init_on_free=1" \
+        --append-if-missing="slab_nomerge" \
+        --append-if-missing="page_alloc.shuffle=1" \
+        --append-if-missing="randomize_kstack_offset=on" \
+        --append-if-missing="vsyscall=none" \
+        --append-if-missing="debugfs=off" \
+        --append-if-missing="lockdown=confidentiality" \
+        --append-if-missing="random.trust_cpu=off" \
+        --append-if-missing="random.trust_bootloader=off" \
+        --append-if-missing="iommu=force" \
+        --append-if-missing="intel_iommu=on" \
+        --append-if-missing="amd_iommu=force_isolation" \
+        --append-if-missing="iommu.passthrough=0" \
+        --append-if-missing="iommu.strict=1" \
+        --append-if-missing="pti=on" \
+        --append-if-missing="module.sig_enforce=1" \
+        --append-if-missing="mitigations=auto,nosmt"
+    elif [ "${OPTION,,}" == "delete" ]; then
+      rpm-ostree kargs \
+        --delete-if-present="init_on_alloc=1" \
+        --delete-if-present="init_on_free=1" \
+        --delete-if-present="slab_nomerge" \
+        --delete-if-present="page_alloc.shuffle=1" \
+        --delete-if-present="randomize_kstack_offset=on" \
+        --delete-if-present="vsyscall=none" \
+        --delete-if-present="debugfs=off" \
+        --delete-if-present="lockdown=confidentiality" \
+        --delete-if-present="random.trust_cpu=off" \
+        --delete-if-present="random.trust_bootloader=off" \
+        --delete-if-present="iommu=force" \
+        --delete-if-present="intel_iommu=on" \
+        --delete-if-present="amd_iommu=force_isolation" \
+        --delete-if-present="iommu.passthrough=0" \
+        --delete-if-present="iommu.strict=1" \
+        --delete-if-present="pti=on" \
+        --delete-if-present="module.sig_enforce=1" \
+        --delete-if-present="mitigations=auto,nosmt"
+    fi
+
 # Configure GRUB screen with various options
 configure-grub ACTION="prompt":
     #!/usr/bin/env bash
