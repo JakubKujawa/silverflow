@@ -1,5 +1,5 @@
 [Unit]
-Description=Configure Bazzite for current hardware
+Description=Minimum-free ZRAM setup
 After=rpm-ostreed.service
 Before=systemd-user-sessions.service
 
