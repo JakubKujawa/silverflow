@@ -1,4 +1,7 @@
 type: systemd
+system:
+  enabled:
+    - supergfxd.service
 user:
   enabled:
     - podman.socket
