@@ -22,7 +22,7 @@ SilverFlow is based on [ublue-os/startingpoint](https://github.com/ublue-os/star
      ```
      rpm-ostree rebase ostree-unverified-registry:ghcr.io/c0deplayer/silverflow-nvidia:latest
      ```
-      - This repository builds date tags as well, so if you want to rebase to a particular day's build:
+      This repository builds date tags as well, so if you want to rebase to a particular day's build:
         
         ```
         rpm-ostree rebase ostree-unverified-registry:ghcr.io/c0deplayer/silverflow-nvidia:20231005
