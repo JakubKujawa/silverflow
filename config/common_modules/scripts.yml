@@ -1,7 +1,7 @@
 type: script
 scripts:
   - file-permissions.sh
-  - system76-scheduler.sh
+  - power-scheduler.sh
   - brave-browser.sh
   - systemwide-themes.sh
   - signing.sh
