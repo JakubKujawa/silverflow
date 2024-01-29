@@ -1,10 +1,10 @@
-name: silverflow-nvidia
+name: silverflow-nvidia-gts
 description: My personal OS image (based on silverblue-nvidia from uBlue OS)
 base-image: ghcr.io/ublue-os/silverblue-nvidia
-image-version: 39
-is_latest_version: true
+image-version: 38
+is_latest_version: false
 is_stable_version: true
-is_gts_version: false
+is_gts_version: true
 
 modules:
   - from-file: common_modules/akmods.yml
