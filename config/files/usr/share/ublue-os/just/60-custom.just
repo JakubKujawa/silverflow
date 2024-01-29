@@ -18,10 +18,11 @@ set-kargs-hardening ACTION="prompt":
     normal=$(tput sgr0)
     OPTION={{ ACTION }}
     if [ "$OPTION" == "prompt" ]; then
-    echo "${bold}Additional boot parameters for hardening${normal}"
-    echo 'GRUB hiding option can be useful for making boot-times faster.'
-    echo 'Press ESC to exit.'
-    OPTION=$(ugum choose "Append" Delete)
+      echo "${bold}Additional boot parameters for hardening${normal}"
+      echo 'GRUB hiding option can be useful for making boot-times faster.'
+      echo 'Press ESC to exit.'
+      OPTION=$(ugum choose "Append" Delete)
+    fi
     if [ "${OPTION,,}" == "append" ]; then
       rpm-ostree kargs \
         --append-if-missing="init_on_alloc=1" \
@@ -71,10 +72,10 @@ configure-grub ACTION="prompt":
     normal=$(tput sgr0)
     OPTION={{ ACTION }}
     if [ "$OPTION" == "prompt" ]; then
-    echo "${bold}Configuring GRUB${normal}"
-    echo 'GRUB hiding option can be useful for making boot-times faster.'
-    echo 'Hide or Unhide GRUB? Press ESC to exit.'
-    OPTION=$(ugum choose "Unhide (Default)" Hide)
+      echo "${bold}Configuring GRUB${normal}"
+      echo 'GRUB hiding option can be useful for making boot-times faster.'
+      echo 'Hide or Unhide GRUB? Press ESC to exit.'
+      OPTION=$(ugum choose "Unhide (Default)" Hide)
     elif [ "$OPTION" == "help" ]; then
       echo "Usage: ujust configure-grub <option>"
       echo "  <option>: Specify the quick option - 'hide' or 'unhide'"
