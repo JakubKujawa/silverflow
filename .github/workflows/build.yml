@@ -28,7 +28,7 @@ jobs:
       matrix:
         recipe:
           - silverflow-nvidia-39.yml
-          - silvefflow-nvidia-gts.yml
+          - silverflow-nvidia-gts.yml
           
     steps:
 
