@@ -2,6 +2,5 @@ type: script
 scripts:
   - file-permissions.sh
   - power-scheduler.sh
-  - brave-browser.sh
   - systemwide-themes.sh
   - signing.sh
