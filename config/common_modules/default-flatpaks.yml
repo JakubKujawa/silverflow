@@ -2,7 +2,12 @@ type: default-flatpaks
 system:
   repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
   repo-name: flathub
-  repo-title: "Flathub (system-wide)"
+  repo-title: "Flathub (System)"
+
+user:
+  repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+  repo-name: flathub
+  repo-title: "Flathub (User)"
   install:
     - org.gnome.Calculator
     - org.gnome.Calendar
