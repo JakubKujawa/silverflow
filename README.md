@@ -7,7 +7,7 @@ SilverFlow is based on [ublue-os/startingpoint](https://github.com/ublue-os/star
 ## Installation
 
 > [!WARNING]
-> Currently, the system is undergoing constant changes, such as system hardening, package replacement or other experiments (not sure how long). There is a chance of abandoning the system again!
+> Currently, the system is undergoing constant changes, such as system hardening, package replacement or other experiments (not sure how long).
 
 > [!NOTE]
 > I recommend either using one of the main uBlue images or creating your own
