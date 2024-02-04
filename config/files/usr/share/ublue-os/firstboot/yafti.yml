@@ -68,9 +68,8 @@ screens:
           description: Other uncategorized applications.
           default: false
           packages:
-            - ZapZap: com.rtosta.zapzap
             - Caprine: com.sindresorhus.Caprine
-            - Materialgram: io.github.kukuruzka165.materialgram
+            - Telegram: org.telegram.desktop
             - Upscaler: io.gitlab.theevilskeleton.Upscaler
 
   can-we-harden-your-kargs:
@@ -90,6 +89,15 @@ screens:
         This step will hide GRUB from the boot process. If you want to access GRUB, hold down the ESC key during boot.
       actions:
         - run: pkexec ujust configure-grub hide
+
+  can-we-append-kargs-nvidia:
+    source: yafti.screen.consent
+    values:
+      title: NVIDIA Kernel Parameters
+      description: |
+        This step will append needed kernel parameters for NVIDIA drivers. If you have an NVIDIA GPU, you should run this. 
+      actions:
+        - run: pkexec ujust configure-nvidia kargs
 
   final-screen:
     source: yafti.screen.title
