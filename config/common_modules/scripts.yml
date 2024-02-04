@@ -1,5 +1,6 @@
 type: script
 scripts:
   - file-permissions.sh
+  - printer-drivers.sh
   - power-scheduler.sh
   - systemwide-themes.sh
