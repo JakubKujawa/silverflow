@@ -90,6 +90,15 @@ screens:
       actions:
         - run: pkexec ujust configure-grub hide
 
+  can-we-append-kargs-nvidia:
+    source: yafti.screen.consent
+    values:
+      title: NVIDIA Kernel Parameters
+      description: |
+        This step will append needed kernel parameters for NVIDIA drivers. If you have an NVIDIA GPU, you should run this. 
+      actions:
+        - run: pkexec ujust configure-nvidia kargs
+
   final-screen:
     source: yafti.screen.title
     values:
