@@ -4,6 +4,7 @@ base-image: ghcr.io/ublue-os/silverblue-nvidia
 image-version: 39
 
 modules:
+  - from-file: common_modules/containerfile.yml
   - from-file: common_modules/akmods.yml
   - from-file: common_modules/files.yml
   - from-file: common_modules/rpm-ostree.yml
