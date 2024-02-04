@@ -1,5 +1,5 @@
 ublue_variants:
-  - label: C0dePlayer/silverflow
+  - label: c0deplayer/silverflow
     ks: /kickstart/ublue-os.ks
     flavors:
       - label: silverflow-nvidia

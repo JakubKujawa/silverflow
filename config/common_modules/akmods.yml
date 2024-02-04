@@ -3,4 +3,3 @@ install:
   - openrazer
   - winesync
   - ryzen-smu
-  - zenergy

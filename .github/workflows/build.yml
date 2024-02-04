@@ -26,6 +26,7 @@ jobs:
       matrix:
         recipe:
           - silverflow-nvidia-39.yml
+          - silverflow-nvidia-gts.yml
                   
     steps:
       - name: Build Custom Image
