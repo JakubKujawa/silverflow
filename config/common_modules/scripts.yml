@@ -3,4 +3,3 @@ scripts:
   - file-permissions.sh
   - power-scheduler.sh
   - systemwide-themes.sh
-  - signing.sh
