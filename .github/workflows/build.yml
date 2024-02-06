@@ -1,9 +1,9 @@
-# This workflow builds 'live' branch of the repository daily at 16:00 UTC (30 min delay after 'ublue-os/nvidia' builds)
+# This workflow builds 'live' branch of the repository daily at 16:30 UTC (1 hour delay after 'ublue-os/nvidia' builds)
 
 name: bluebuild
 on: 
   schedule:
-    - cron: "00 16 * * *"
+    - cron: "30 16 * * *"
   push:
     branches:
       - live
@@ -25,8 +25,7 @@ jobs:
       fail-fast: false
       matrix:
         recipe:
-          - silverflow-nvidia-39.yml
-          - silverflow-nvidia-gts.yml
+          - recipe.yml
                   
     steps:
       - name: Build Custom Image
